@@ -5,6 +5,7 @@ export default defineConfig({
   base: '/noga-app/',
   plugins: [
     VitePWA({
+      injectRegister: 'auto',
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'maskable-icon.png'],
       manifest: {
