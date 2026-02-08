@@ -2,7 +2,6 @@ import { defineConfig } from 'vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  // חשוב מאוד: שם ה-Repository שלך בגיטהאב
   base: '/noga-app/', 
   plugins: [
     VitePWA({
