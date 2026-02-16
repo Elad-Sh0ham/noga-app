@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface NumbersMenuProps {
   onSelect: (num: number) => void;
   onBack: () => void;

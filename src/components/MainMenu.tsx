@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface MainMenuProps {
   onSelect: (menu: 'NUMBERS_MENU' | 'LETTERS' | 'SHAPES' | 'WORDS') => void;
 }
