@@ -10,15 +10,18 @@ const App = () => {
   const [selectedNumber, setSelectedNumber] = useState<number | null>(null);
 
   // --- ניהול כפתור חזור של הטלפון ---
-  useEffect(() => {
-    const handlePopState = () => {
-      if (currentScreen === 'GAME') {
-        setCurrentScreen('NUMBERS_MENU');
-      } else if (currentScreen === 'NUMBERS_MENU') {
+useEffect(() => {
+    const handlePopState = (event: PopStateEvent) => {
+      // אם שמרנו את שם המסך בתוך ה-state של ה-history
+      if (event.state && event.state.screen) {
+        setCurrentScreen(event.state.screen);
+      } else {
+        // אם אין state (חזרנו להתחלה ממש), נחזור לבית
         setCurrentScreen('HOME');
       }
     };
 
+    // כשדוחפים state חדש, אנחנו שומרים בו את שם המסך הנוכחי
     if (currentScreen !== 'HOME') {
       window.history.pushState({ screen: currentScreen }, '');
     }
