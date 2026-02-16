@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/noga-app/sw.js', { scope: '/noga-app/' })})}
