@@ -12,7 +12,6 @@ const App = () => {
   // --- ניהול כפתור חזור של הטלפון ---
   useEffect(() => {
     const handlePopState = () => {
-      // כשהמשתמש לוחץ על כפתור חזור בטלפון:
       if (currentScreen === 'GAME') {
         setCurrentScreen('NUMBERS_MENU');
       } else if (currentScreen === 'NUMBERS_MENU') {
@@ -20,7 +19,6 @@ const App = () => {
       }
     };
 
-    // מוסיפים רשומה להיסטוריה בכל פעם שעוברים מסך (חוץ מדף הבית)
     if (currentScreen !== 'HOME') {
       window.history.pushState({ screen: currentScreen }, '');
     }
@@ -32,9 +30,7 @@ const App = () => {
     };
   }, [currentScreen]);
 
-  // פונקציות ניווט ידניות (מהכפתורים במסך)
   const goToNumbers = () => setCurrentScreen('NUMBERS_MENU');
-  const goToHome = () => setCurrentScreen('HOME');
   const startGame = (num: number) => {
     setSelectedNumber(num);
     setCurrentScreen('GAME');
@@ -48,7 +44,7 @@ const App = () => {
 
       {currentScreen === 'NUMBERS_MENU' && (
         <NumbersMenu 
-          onBack={() => window.history.back()} // שינוי ל-back של הדפדפן כדי שיסנכרן את ההיסטוריה
+          onBack={() => window.history.back()} 
           onSelect={startGame} 
         />
       )}
@@ -56,7 +52,7 @@ const App = () => {
       {currentScreen === 'GAME' && selectedNumber !== null && (
         <NumberGame 
           number={selectedNumber} 
-          onBack={() => window.history.back()} // שינוי ל-back של הדפדפן
+          onBack={() => window.history.back()} 
         />
       )}
     </div>
@@ -68,3 +64,11 @@ const appStyles = {
     textAlign: 'center' as 'center',
     padding: '20px',
     backgroundColor: '#FDF9F3',
+    minHeight: '100vh',
+    direction: 'rtl' as 'rtl',
+    fontFamily: 'Arial',
+    overflowX: 'hidden' as 'hidden'
+  }
+};
+
+export default App;
