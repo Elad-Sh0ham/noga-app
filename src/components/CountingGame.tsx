@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const CountingGame = () => {
   const [targetNumber, setTargetNumber] = useState(Math.floor(Math.random() * 10) + 1);

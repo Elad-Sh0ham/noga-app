@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import MainMenu from './components/MainMenu';
 import NumbersMenu from './components/NumbersMenu';
 import NumberGame from './components/NumberGame';
