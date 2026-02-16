@@ -10,11 +10,17 @@
   },
   "devDependencies": {
     "@types/howler": "^2.2.12",
+    "@types/react": "^19.2.13",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.3",
     "typescript": "~5.9.3",
     "vite": "^7.2.4",
     "vite-plugin-pwa": "^1.2.0"
   },
   "dependencies": {
-    "howler": "^2.2.4"
+    "@bubblewrap/cli": "^1.24.1",
+    "howler": "^2.2.4",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   }
 }
